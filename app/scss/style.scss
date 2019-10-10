@@ -20,8 +20,7 @@
 
 .header__text {
   font-size: 15px;  
-  font-weight: 400;
-  line-height: 24px;  
+   line-height: 24px;  
   span {
     color: $orange;
   }
@@ -70,7 +69,7 @@
     font-size: 14px;
     font-weight: 500;    
     color: #ffffff;
-    transition: 0.5s ease-out;
+    transition: $trans;
   }
   & a:hover {
     color: #eee7e2;
@@ -132,3 +131,343 @@
 
   }
 }
+// ********products******
+.products {
+  padding: 110px 0 ;
+   background-color: #f4f6f5;
+}
+.products__inner-btn {
+  text-align: center;
+  margin-bottom: 60px;   
+    button {
+    margin-right: 6px;
+    padding: 13px 27px;
+    border: none;
+    outline: none;
+    background-color: #eeebeb;
+    color: $bg;
+    font-size: 14px;    
+    cursor: pointer;
+    transition: $trans; 
+    &.mixitup-control-active {
+      color: #fff;
+      background-color: $orange;
+    } 
+    
+    &:last-child {
+      margin-right: 0;
+    }  
+    
+    }
+}
+
+.products__inner-box {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; 
+ }
+
+.product__item {
+  margin-bottom: 20px;
+  max-width: 23vw;
+  width: 100%;
+  box-shadow: 0 2px 2px rgba(205, 214, 222, 0.75);
+  transition: $trans;
+  &-img {
+    display: block;
+    min-height: 250px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;  
+   
+  }
+  &-content {
+    min-height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    font-weight: 500;
+    border-bottom: 1px solid #e7ecf2;;
+   }  
+  &-name {
+    max-width: 310px;
+    
+  }
+  &-title  {
+    display: block;
+    font-size: 18px;        
+    color: $bg;
+  }
+  &-category {
+    display: block;
+    color: $green;
+    font-size: 14px;
+  }
+  &-price {
+    font-size: 20px;
+    font-weight: 700;
+    color: $bg;
+  }
+  &-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;   
+   
+  }
+  span {
+    display: inline-block;  
+        
+  }    
+  
+  &-author {
+    font-size: 14px;
+    display: flex;
+    align-items: center;      
+  }
+  &-star {
+    font-size: 12px;
+    span {
+      color:$bg;
+    }
+  }
+  
+  .avatar {
+    display: inline-block; 
+    margin-right: 15px;     
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+  }
+}
+.product__item:hover {
+  box-shadow: 0 16px 20px rgba(216, 216, 216, 0.75);
+}
+.products__bottom-btn {  
+  text-align: center;  
+  padding: 70px 0px 90px;
+  margin: 0 auto; 
+   
+    button {
+    margin-right: 12px;
+    padding: 18px 30px;
+    border: none;
+    outline: none;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(204, 216, 228, 0.75);
+    color: $bg;
+    font-size: 16px;     
+    cursor: pointer;
+    transition: $trans; 
+    &.mixitup-control-active {
+      color: #fff;
+      background-color: $orange;
+      box-shadow: 0 16px 20px rgba(216, 216, 216, 0.75);
+    }     
+    &:last-child {
+      margin-right: 0;
+    }  
+    
+    }   
+} 
+
+// ********product-slider******
+
+.product-slider {
+  padding: 50px 0px 120px;
+  .slick-dots {
+    margin-top: 50px;
+    text-align: center;
+    li {
+      display: inline-block;
+      margin-right: 3px;
+      margin-left: 3px;
+      
+      &.slick-active {        
+        button {
+          background-color: #8bc34a;
+          border: 1px solid #dadada; 
+                    
+        }
+      }
+      button {
+        width: 16px;
+        height: 16px;
+        border-radius:50%;
+        border: 1px solid #dadada;
+        background-color: #e8e8e8;
+        font-size: 0;        
+        cursor: pointer;
+        outline: none;
+      }
+    }
+  }
+
+}
+// ********advantages******
+.advantages {
+  padding: 110px 0px;
+  background-color: $bg;
+}
+.advantages__title {
+  color: #ffffff;
+}
+.advantages__inner {
+  display: flex;
+  justify-content: space-between;
+}
+.advantages__item {
+  min-width: 370px;
+  padding: 0px 18px;
+  text-align: center;  
+  &:hover {
+    .advantages__item-image {
+      background-color: $green; 
+      g {
+        fill: #fff;
+      }     
+    }
+    .advantages__item-title {
+      color: $green;
+    }  
+  }  
+  &-image {
+    width: 114px;
+    height: 114px;
+    border-radius: 50%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 30px;
+    transition: $trans;
+  }
+  &-title {
+    margin-bottom: 30px;
+    font-size: 24px;
+    font-weight: 500;
+    color: #ffffff;
+    transition: $trans;
+  }
+  &-text {
+    color: #b0bec5;
+    font-size: 15px;
+    font-weight: 400;
+  }
+}
+.icosvg-1 {
+  svg {
+    transition: $trans;
+    width: 50px;
+  }  
+}
+.icosvg-2 {
+  svg {
+    width: 70px;
+    transition: $trans;
+  }  
+}
+.icosvg-3 {
+  svg {
+    width: 86px;
+    transition: $trans;
+  }
+}
+// ********author******
+.author {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 75vh;
+  width: 100%;
+  &__box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 215px;
+    max-width: 600px;
+    width: 100%;
+    background-color: $green;
+  }
+  &__title {       
+    color: #ffffff;
+    font-size: 30px;
+    line-height: 30px;
+    margin-right: 45px;
+    max-width: 260px;
+    line-height: 36px;
+    span {
+      font-weight: 700; 
+    }
+  }
+  &__link {    
+    font-size: 18px;
+    line-height: 36px;
+    padding: 14px 40px;
+    background-color: #fff;
+  }
+
+}
+// ********tutorial******
+
+.tutorial {
+  padding: 80px 0 100px;
+}
+.tutorial__inner {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 57px;
+}
+.tutorial__item {
+  max-width: 370px;  
+  width: 100%;
+  text-align: center;
+  &-images {    
+    min-height: 270px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  &-title {
+    padding: 30px 10px;
+    font-size: 24px;
+    font-weight: 700;    
+    color: $bg;
+    background-color: #eeebeb;;
+  }
+}
+.tutorial__link {
+  display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

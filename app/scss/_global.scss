@@ -23,21 +23,43 @@ li{
   list-style: none;
 }
 body{
-  font-family: 'Roboto-Regular', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 15px;
   line-height: 24px;
   color: $text;
 	overflow-x: hidden;	
 }
-
+input {
+  border: none;
+  outline: none;
+}
 .container {
   max-width: 1200px;
   margin: 0 auto;
 	padding: 0 15px; 
 	
 }
-input {
-  border: none;
-  outline: none;
+.container-fluid {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+@media (max-width: 720px) {
+  .container-fluid {   
+    padding: 0 15px;
+  }
+}
+.title {
+  margin-bottom: 50px;
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 60px;
+  $bg: #263238;
+}
+.rate-star {
+  display: inline-block;
+  margin-right: 13px;
 }
