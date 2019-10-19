@@ -10,19 +10,34 @@ html {
 html,
 body {
   height: 100%;
+  margin: 0;
+  padding: 0;
 }
-a{
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+}
+.content {
+	flex: 1 0 auto;
+}
+.footer {
+	flex: 0 0 auto;
+}
+
+a {
   display: inline-block;
   text-decoration: none;
   color: $text;
 }
 ul,
-li{
+li {
   margin: 0;
   padding: 0;
   list-style: none;
 }
-body{
+body {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 15px;
@@ -51,6 +66,10 @@ input {
     padding: 0 15px;
   }
 }
+.page-content {
+  background-color: $grey;
+}
+
 .title {
   margin-bottom: 50px;
   text-align: center;
@@ -62,4 +81,34 @@ input {
 .rate-star {
   display: inline-block;
   margin-right: 13px;
+}
+.breadcrumbs {
+  &__inner {
+    padding: 45px 0px 40px;
+  }
+  &__list {
+    li {
+      position: relative;
+      display: inline-block;      
+        & + li {
+        padding-left: 24px;        
+          &::before{
+            content: '-';
+            position: absolute;
+            left: 8px;
+            color: $green;
+          }
+        }
+      &:last-child {
+        a,
+        span {
+          color: $bg;
+        }      
+      }
+    }    
+    a {
+      color: #b0bec5;
+    }    
+   
+  }
 }
