@@ -15,11 +15,10 @@
   align-items: center;
   height: 10vh;
   margin-top: 25px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 .header__content {
-  display: flex;
-  display: flex;
+  display: flex;  
   align-items: center;
 }
 
@@ -56,8 +55,96 @@
 
 .header__nav { 
   background-color: $bg;
+  width: 100%;
+  
 }
+.menu__btn {
+  display: none;
+  width: 40px; 
+  height: 45px; 
+  position: relative;
+  top: 10px;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .5s ease-in-out;
+  -moz-transition: .5s ease-in-out;
+  -o-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  cursor: pointer;
+
+  span {    
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: $grey;    
+    opacity: 1;
+    left: 0;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
+  }  
+}
+
+.menu__btn span:nth-child(1) {
+  top: 0px;
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -o-transform-origin: left center;
+  transform-origin: left center;
+}
+
+.menu__btn span:nth-child(2) {
+  top: 11px;
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -o-transform-origin: left center;
+  transform-origin: left center;
+}
+
+.menu__btn span:nth-child(3) {
+  top: 22px;
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -o-transform-origin: left center;
+  transform-origin: left center;
+}
+
+.menu__btn.open span:nth-child(1) {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  top: -3px;
+  left: 8px;
+}
+
+.menu__btn.open span:nth-child(2) {
+  width: 0%;
+  opacity: 0;
+}
+
+.menu__btn.open span:nth-child(3) {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  top: 26px;
+  left: 7px;
+}
+.header__btn-menu {
+  display: none;
+}
+
 .menu__list {
+  display: block;
   display: flex; 
   li {
     margin-right: 40px;    
@@ -74,8 +161,7 @@
     color: #ffffff;
     transition: $trans;
   }
-  & a:hover {
-    color: #eee7e2;
+  & a:hover {    
     border-bottom: 2px solid $orange;
     padding-bottom: 3px;
     opacity: 0.9;
@@ -153,26 +239,27 @@
       display: block;          
       border-top: 1px solid #ccc;     
       height: auto;   
-      overflow: hidden;
-      transition: $trans;
+      overflow: hidden;  
+      .message__item {
+        padding: 23px 23px;
+        border-width: 1px;
+      }    
     }
-    .message__item {
-      padding: 23px 23px;
-      border-width: 1px;
-    }
+    
   }  
 }
 .message__menu,
 .note__menu {
   height: 0;
-  top: 88px;
+  top: 78px;
   right: 0px;
   position: absolute;
   width: 270px;
   background-color: #fff; 
   border: 1px;   
   transition: $trans;
-  overflow: hidden;   
+  overflow: hidden; 
+  z-index: 10;  
 }
 
 .message__item {
@@ -192,9 +279,7 @@
     font-size: 16px;
     
   }
-  &:last-child {
-    border-bottom: none;
-  }
+  
   .span {
     position: absolute;
     display: block;    
@@ -265,6 +350,9 @@
     font-weight: 700;
     
   }
+  .img__user {
+    border-radius: 50%;
+  }
  
 }
 .user__box,
@@ -274,8 +362,7 @@
 }
 .user__box,
 .note__box,
-.message__box, 
-.basket__box {
+.message__box {
   height: 88px;
   margin-top: 48px; 
   transition: $trans;      
@@ -301,9 +388,10 @@
   width: 158px;
   position: absolute;
   background-color: #fff; 
-  top: 91px; 
+  top: 81px; 
   transition: $trans;   
-  overflow: hidden;   
+  overflow: hidden; 
+  z-index: 10;  
   a {
     font-size: 12px;
     color: #546e7a;
@@ -314,33 +402,41 @@
   margin-top: 43px; 
 }
 .basket__box {
-    &:hover  {
-    .basket__menu {  
-      top: 88px;   
-      display: block;     
-      height: auto;       
-      overflow: hidden;
+  height: 86px;
+  margin-top: 48px; 
+  transition: $trans;      
+  position: relative;
+  &:hover  {
+    .basket__menu {
+      padding: 20px 0px;
+      display: block;      
+      border: 1px solid #ccc;
+      height: auto;          
+      overflow: auto;
       transition: $trans;
-      border-top: 1px solid #ccc;
+    }
+    .header__circle::before {
+      transition: $trans; 
+      color: $bg;
     }
     .basket__item {
-      padding: 23px 23px;
-      border-width: 1px;
       
-    }
-  } 
+      border-width: 1px;
+    }    
+  }   
 }
 
 .basket__menu {
   height: 0;
-  top: 88px;
-  right: 5px;
+  top: 77px;
+  right: 0px;
   position: absolute;
   width: 270px;
-  background-color: #fff;
-  border: 1px;  
+  background-color: #fff; 
+  border-width: 1px;   
   transition: $trans;
-  overflow: hidden;
+  overflow: hidden; 
+  z-index: 10; 
 
   .basket__item,  
   .basket__summ-link,
@@ -360,7 +456,8 @@
     border-left-width: 1px;
     border-right-width: 1px;
     border-top: none;
-    padding: 0 23px;
+    padding: 15px 23px;
+    
   }
   
   .basket__info {
@@ -401,8 +498,109 @@
       background-color: #e85647;
     }
   }  
-    
+
 }
+// **********modal__login********
+#modal__login {  
+  max-width: 740px; 
+  width: 100%;
+  padding-top: 80px;
+  padding-bottom: 100px;
+  background-color: $green;
+  .login__wrapper {
+    margin: 0 auto;
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    label {
+      position: relative;
+      &::before {
+        position: absolute;        
+        font-size: 14px;
+        left: 18px;
+        top: 8px;
+        font-family: 'icomoon';
+        color: #ffffff;        
+        z-index: 10;
+      }
+    }
+    .login__label-name::before {
+      content: "\f007";
+    }
+    .login__label-pass::before {
+      content: "\f023";
+    }
+    input {
+      display: block;
+      width: 100%;
+      height: 40px;
+      margin-bottom: 8px;
+      border: none;
+      color: #ffffff;
+      background-color: #76ae36;
+      padding-left: 40px;
+      &::placeholder {
+        color: #ffffff;
+        font-size: 14px;     
+      }
+    }
+  }
+  .login__title {
+    margin-bottom: 40px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 36px;
+    text-transform: uppercase;
+  }
+  .login__btn {
+    margin-top: 19px;
+    padding: 16px 40px;
+    color: #000000;    
+    font-size: 14px;
+    font-weight: 700;    
+    text-transform: uppercase;
+    background-color: #fff;
+    box-shadow: 0 1px 2px rgba(118, 174, 54, 0.75);    
+    outline: none;
+    cursor: pointer;
+  }
+  button {
+    color: #ffffff;
+  }
+  .link__creat {
+    width: 250px;
+    padding: 14px 34px 14px 65px;
+    margin-left: 10px;
+    margin-top: 19px;
+    background-color: #76ae36;
+    position: relative;
+    color: #ffffff;
+    font-size: 18px;
+    &::before {
+      position: absolute;
+      content: '\f044';
+      font-size: 18px;
+      left: 35px;
+      font-family: 'icomoon';
+      color: #fff;
+    }    
+  }
+  .link__lost {
+    height: 14px;
+    color: #ffffff;    
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 25px;
+  }
+
+
+
+
+}
+
 
 // **********search********
 .search {  
@@ -752,7 +950,7 @@
 // ********tutorial******
 
 .tutorial {
-  padding: 80px 0 100px;
+  padding: 80px 0 50px;  
 }
 .tutorial__inner {
   display: flex;
@@ -1094,13 +1292,12 @@ button.icon-th-list {
       position: absolute;
       right: 37px;
       color: $green;          
-      font-size: 16px;       
+      font-size: 16px;      
          
     }
-  }   
+  }  
   
 }
-
 .page-list {
   &.list {
     box-shadow:none;
@@ -1136,14 +1333,12 @@ button.icon-th-list {
       padding: 10px 30px;
     }
     .product__item-list {
-      display: block;
-     
+      display: block;     
     }
     .product__item-star {
       margin-left: auto;
       margin-right: 30px; 
-    }
-    
+    }    
   }
   
 }
@@ -1160,6 +1355,7 @@ button.icon-th-list {
 
 // ********footer******
 .footer {
+  margin-top: 50px;
   &__content {   
     background-color: $bg;
   }
@@ -1323,6 +1519,9 @@ button.icon-th-list {
 }
 
 
+
+
+@import 'media';
 
 
 

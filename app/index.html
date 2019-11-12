@@ -32,14 +32,14 @@
 								<a class="header__phone" href="+61383766284">+61 3 8376 6284</a>
 							</div>
 							<div class="header__box">
-								<div class="note__box">
+								<div class="note__box header__btn-login--off">
 									<a class="notification header__circle active icon-bell-o" href="#">
 										<span>8</span>
 									</a>
 									<div class="message__menu note__menu">
 										<div class="message__item icon-bell-o icons__color">
 											<img src="images/content/menu_user1.jpg" alt="" class="message__img">
-											<div class="message__info ">	
+											<div class="message__info ">
 												<div class="message__info-thema">Need WP Help!</div>
 												<div class="message__info-date">01 Dec, 2016</div>
 											</div>
@@ -47,22 +47,21 @@
 										<div class="message__item icon-bell-o">
 											<img src="/images/content/menu_user2.jpg" alt="" class="message__img">
 											<div class="message__info">
-											<div class="message__info-thema">Need WP Help!</div>
+												<div class="message__info-thema">Need WP Help!</div>
 												<div class="message__info-date">26 Nov, 2016</div>
 											</div>
 										</div>
 										<div class="message__item icon-bell-o">
 											<img src="/images/content/menu_user3.jpg" alt="" class="message__img">
 											<div class="message__info">
-											<div class="message__info-thema">Need WP Help!</div>
+												<div class="message__info-thema">Need WP Help!</div>
 												<div class="message__info-date">26 Nov, 2016</div>
 											</div>
 										</div>
 									</div>
-
 								</div>
 
-								<div class="message__box">
+								<div class="message__box header__btn-login--off">
 									<a class="message header__circle active icon-envelope-o" href="#">
 										<span>5</span>
 									</a>
@@ -133,10 +132,10 @@
 									</div>
 								</div>
 
-								<div class="user__box">
+								<div class="user__box header__btn-login--off">
 									<a class="user" href="#">
 										<div class="user__inner">
-											<div class="user__images">
+											<div class="user__images img__user">
 												<img src="images/content/h_user.jpg" alt="user">
 											</div>
 											<div class="user__info">
@@ -158,11 +157,12 @@
 										</ul>
 									</div>
 								</div>
-								<a href="#" class="header__btn header__btn-login header__btn header__btn-login--off">Login</a>
-								<a href="#" class="header__btn header__btn-register header__btn-login--off">Register</a>
-								<a href="#" class="header__btn header__btn-register header__btn-login--on">Logout</a>
-
+								<a class="header__btn header__btn-login " data-fancybox data-src="#modal__login"
+									href="javascript:;">Login</a>
+								<a href="#" class="header__btn header__btn-register ">Register</a>
+								<a href="#" class="header__btn header__btn-register header__btn-login--off">Logout</a>
 							</div>
+							<div class="header__btn-menu icon-user"></div>
 						</div>
 					</div>
 				</div>
@@ -170,6 +170,11 @@
 				<div class="header__nav">
 					<div class="container">
 						<nav class="menu">
+							<div class="menu__btn">
+								<span></span>
+								<span></span>
+								<span></span>
+							</div>
 							<ul class="menu__list">
 								<li><a href="#">Home</a></li>
 								<li><a href="#">About</a></li>
@@ -976,6 +981,24 @@ l0 1980 -2331 3 c-1282 1 -2334 -1 -2337 -5z" />
 				</div>
 			</div>
 		</footer>
+	</div>
+
+	<!-- //////////modal__login//////// -->
+	<div id="modal__login">
+		<div class="login__wrapper">
+			<div class="login__title">Login</div>
+			<form action="#">
+				<label class="login__label-name" for="text">
+					<input type="text" placeholder="Name">
+				</label>
+				<label class="login__label-pass" for="password">
+					<input type="password" placeholder="Password">
+				</label>
+				<button class="login__btn" type="submit">Submit</button>
+				<a class="link__creat" href="#!">Creat An Account?</a>
+				<a class="link__lost" href="#!">Lost Password?</a>
+			</form>
+		</div>
 	</div>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
