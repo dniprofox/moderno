@@ -7,6 +7,7 @@
 
 // font-family: 'Raleway', sans-serif;
 // font-family: 'Lato', sans-serif;
+// font-family: 'Open Sans', sans-serif;
 
 // ********header****
 .header__top {
@@ -502,6 +503,7 @@
 }
 // **********modal__login********
 #modal__login {  
+  display: none;
   max-width: 740px; 
   width: 100%;
   padding-top: 80px;
@@ -596,9 +598,6 @@
     margin-top: 25px;
   }
 
-
-
-
 }
 
 
@@ -665,6 +664,8 @@
 
   }
 }
+
+
 // ********products******
 .products {
   padding: 100px 0 ;
@@ -1355,7 +1356,7 @@ button.icon-th-list {
 
 // ********footer******
 .footer {
-  margin-top: 50px;
+  margin-top: 0px;
   &__content {   
     background-color: $bg;
   }
@@ -1518,24 +1519,223 @@ button.icon-th-list {
     }
 }
 
+// ********page__404******
+.page-404__wrapper,
+.about__wrapper,
+.contact__wrapper {     
+  border: 1px solid #d7d7d7;
+  background-color: #fff;  
+ 
+}
+.page-404__head,
+.about__head,
+.contact__head     {
+  padding: 25px 25px 30px;
+  color: #444444;
+  font-size: 24px;
+  font-weight: 500;
+  border-bottom: 1px solid #d7d7d7;
+}
+.page-404__inner { 
+  margin: 0 auto;
+  padding-bottom: 100px;
+  text-align: center;
+  background-color: $green;    
+}
+.page-404__404 {
+  padding-top: 70px;     
+  font-family: 'Open Sans', sans-serif;
+  font-size: 300px;
+  line-height: 300px;
+  font-weight: 800;
+  color: #fff; 
+  position: relative;  
+  &::after {
+    content: "";      
+    position: absolute;
+    background-image: url(../images/content/man_404.png);
+    background-repeat: no-repeat;
+    height: 292px;
+    width: 150px;
+    margin-left: 25px; 
+    margin-top: -25px;
+  } 
+}
+.page-404__content {
+  margin: 0 auto;
+  max-width: 530px;
+  width: 100%;
+}
+
+.page-404__title {
+  margin-top: 60px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 30px;    
+  line-height: 24px;
+  letter-spacing: 5px;
+  margin-bottom: 35px;
+}
+.page-404__text { 
+  padding-left: 20px;
+  padding-right: 20px;   
+  margin-bottom: 50px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+}
+.page-404__link {
+  padding: 22px 32px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+  border: 2px solid #ffffff;
+}
+  // ********page__about******
+.about__page,
+.contact__page {
+  background-color: #f4f6f5;
+  padding-bottom: 70px;
+}
+  
+.about__inner {
+  padding-top: 40px;
+  padding-bottom: 55px;
+  background-color: #fff;
+} 
+.about__content {
+  margin-bottom: 55px;
+  padding-left: 55px;
+  padding-right: 65px;
+} 
+.about__title {
+  margin-bottom: 25px;
+  color: #444444;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+} 
+.about__text {
+  color: #707070;
+} 
+// ********page__contact******
+.contact__inner {
+  padding: 30px 40px 15px ;
+}
+.contact__head {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+.contact__map {
+  margin-bottom: 50px;
+  iframe {
+    width: 100%;
+    height: 415px;
+  }
+}
+.contact__box {
+  display: flex;
+  
+}
+.contact__info {  
+  max-width: 330px;
+  width: 100%;
+  margin-right: 30px;
+}
+.contact__info-item {
+  margin-bottom: 30px;
+}
+.contact__info-title {
+  color: $bg;  
+  padding-left: 40px;
+  font-size: 20px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;  
+  font-weight: 500; 
+  position: relative;
+  font-family: 'Lato', sans-serif;
+  &::after {
+    position: absolute;
+    content: '';
+    left: 40px;
+    bottom: 0;
+    left: 40px;
+    width: 44px;
+    height: 4px;
+    background-color: #8bc34a;
+  } 
+  &:before {
+    position: absolute;    
+    font-size: 20px;
+    top: 2px;
+    left: 0px;
+    font-family: 'icomoon';
+    color: $green;
+  }
+
+}
+.contact__info-content {
+  max-width: 230px;
+  color: #707070;
+  padding-left: 40px;  
+}
+.contact__info-phone {
+  display: block;
+}
+.contact__form-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  width: 100%;
+}
+.contact__form {   
+   width: 100%;
+   input {
+     width: 350px;
+     height: 43px;
+     padding-left: 17px;
+     padding-right: 17px;
+     display: inline-block;
+     background-color: #f1f4f5;
+     border: none;
+     &::placeholder {   
+     color: #7a7a7a;       
+    }
+   }
+   textarea {
+    border: none;
+    margin-bottom: 25px;
+    padding: 13px 17px;
+    height: 190px;
+    background-color: #f1f4f5;
+    width: 100%;
+    display: block;
+    resize: none;
+    &::placeholder {   
+      color: #7a7a7a;  
+   }
+   
+}
+
+}
+.contact__form-title { 
+  margin-bottom: 19px;
+  color: #333333;
+  font-size: 24px;
+  font-weight: 500;
+}
+.contact__btn {
+  padding: 22px 35px;
+  border: none;
+  color: #fff;
+  background-color: $green;  
+  cursor: pointer;
+  
+}
+
 
 
 
 @import 'media';
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
