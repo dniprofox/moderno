@@ -12,31 +12,38 @@ $(function(){
     arrows: false,
     slidesToShow: 4,
     slidesToScroll: 4,
-    // responsive: [
-    //   {
-    //     breakpoint: 1900,
-    //     settings: {
-    //       slidesToShow: 3,
-    //       slidesToScroll: 3,
-    //       infinite: true,
-    //       dots: true
-    //     }
-    //   },
-    //   {
-    //     breakpoint: 1441,
-    //     settings: {
-    //       slidesToShow: 2,
-    //       slidesToScroll: 1,
-    //     }
-    //   },
-    //   {
-    //     breakpoint: 801,
-    //     settings: {
-    //       slidesToShow: 1,
-    //       slidesToScroll: 1,
-    //     }
-    //   },
-    // ]
+    responsive: [
+      {
+        breakpoint: 1900,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 4,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 1370,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+        }
+      },
+      {
+        breakpoint: 1290,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        }
+      },
+      {
+        breakpoint: 680,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,          
+        }
+      },
+    ]
   });
   
   $(".js-range-slider").ionRangeSlider({
